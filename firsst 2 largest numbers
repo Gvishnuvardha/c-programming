@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, first_largest, second_largest;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for(i=0; i<n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    first_largest = arr[0];
+    second_largest = arr[1];
+    for(i=2; i<n; i++) {
+        if(arr[i] > first_largest) {
+            second_largest = first_largest;
+            first_largest = arr[i];
+        } else if(arr[i] > second_largest) {
+            second_largest = arr[i];
+        }
+    }
+
+    printf("The FIRST LARGEST = %d\n", first_largest);
+    printf("THE SECOND LARGEST = %d\n", second_largest);
+
+    return 0;
